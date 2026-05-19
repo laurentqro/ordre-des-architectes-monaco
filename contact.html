@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact · Ordre des Architectes de Monaco</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo" aria-label="Accueil · Ordre des Architectes de Monaco">
+        <img src="images/logo.png" alt="Logo de l'Ordre des Architectes de Monaco">
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="presentation.html">Présentation</a></li>
+          <li><a href="membres.html">Les Membres</a></li>
+          <li><a href="contact.html" class="is-active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="page">
+
+      <header>
+        <h1 class="page-title">Nous <em>écrire.</em></h1>
+      </header>
+
+      <section class="contact">
+
+        <aside class="contact__aside">
+          <p>Pour toute correspondance adressée au Conseil de l'Ordre, question, demande de renseignement, ou simple prise de contact, veuillez utiliser le formulaire ci-contre.</p>
+
+          <ul class="contact-coords">
+            <li>
+              <h4>Président</h4>
+              <p>8, rue Honoré Labande<br>MC&nbsp;98000 Monaco</p>
+            </li>
+            <li>
+              <h4>Vice-présidente</h4>
+              <p>36, avenue de l'Annonciade<br>MC&nbsp;98000 Monaco</p>
+            </li>
+            <li>
+              <h4>Secrétaire</h4>
+              <p>15, boulevard du Larvotto<br>MC&nbsp;98000 Monaco</p>
+            </li>
+          </ul>
+        </aside>
+
+        <form class="form" action="#" method="post" novalidate>
+
+          <div class="field--inline">
+            <div class="field">
+              <label for="prenom">Prénom <span class="req" aria-hidden="true">◆</span></label>
+              <input class="input" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            <div class="field">
+              <label for="nom">Nom <span class="req" aria-hidden="true">◆</span></label>
+              <input class="input" type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+          </div>
+
+          <div class="field--inline">
+            <div class="field">
+              <label for="email">Adresse électronique <span class="req" aria-hidden="true">◆</span></label>
+              <input class="input" type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+            </div>
+            <div class="field">
+              <label for="telephone">Téléphone</label>
+              <input class="input" type="tel" id="telephone" name="telephone" placeholder="+377 …">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="objet">Objet <span class="req" aria-hidden="true">◆</span></label>
+            <select class="select" id="objet" name="objet" required>
+              <option value="" disabled selected>Choisir un motif</option>
+              <option value="renseignement">Demande de renseignement</option>
+              <option value="projet">Projet en Principauté</option>
+              <option value="presse">Presse &amp; communication</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span class="req" aria-hidden="true">◆</span></label>
+            <textarea class="textarea" id="message" name="message" rows="6" placeholder="Votre message…" required></textarea>
+          </div>
+
+          <div class="form__actions">
+            <p class="form__notice">Les champs marqués d'un losange sont obligatoires. Vos données ne seront utilisées qu'aux fins de réponse à votre demande.</p>
+            <button class="btn" type="submit">
+              Envoyer
+            </button>
+          </div>
+
+        </form>
+
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand__logo"><img src="images/logo.png" alt="Logo de l'Ordre des Architectes de Monaco"></span>
+          Ordre des Architectes de la Principauté de Monaco, institué par l'Ordonnance-Loi 341 du 24 mars 1942.
+        </div>
+        <div class="footer-block">
+          <h5>Président</h5>
+          <p>8, rue Honoré Labande<br>MC&nbsp;98000 Monaco</p>
+        </div>
+        <div class="footer-block">
+          <h5>Vice-présidente</h5>
+          <p>36, avenue de l'Annonciade<br>MC&nbsp;98000 Monaco</p>
+        </div>
+        <div class="footer-block">
+          <h5>Secrétaire</h5>
+          <p>15, boulevard du Larvotto<br>MC&nbsp;98000 Monaco</p>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>© Ordre des Architectes de Monaco</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
