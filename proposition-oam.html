@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposition — Ordre des Architectes de Monaco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F0E6;
+    --paper-shade: #EBE4D3;
+    --ink: #1A1612;
+    --ink-soft: #2A241D;
+    --stone: #6B6258;
+    --rule: #C9BFA9;
+    --burnt: #8B2914;
+    --burnt-soft: #B5503C;
+    --teal: #007F7F;
+    --teal-soft: #4FA8A8;
+    --highlight: #E8DEC2;
+
+    --font-display: 'Fraunces', 'Georgia', serif;
+    --font-body: 'Spectral', 'Georgia', serif;
+
+    --content-width: 720px;
+    --page-padding-y: 72px;
+    --page-padding-x: 96px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { background: #2A241D; }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page {
+    max-width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    background: var(--paper);
+    padding: var(--page-padding-y) var(--page-padding-x);
+    position: relative;
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,0.35), 0 8px 20px -8px rgba(0,0,0,0.25);
+    background-image:
+      radial-gradient(ellipse at top left, rgba(184,143,77,0.04), transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(139,41,20,0.03), transparent 50%);
+  }
+
+  .page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.05 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .page > * { position: relative; z-index: 1; }
+
+  .cover {
+    min-height: 297mm;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 48px;
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .monogram {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14pt;
+    font-variation-settings: "SOFT" 50;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .monogram-mark {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("lc-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .ref-block {
+    text-align: right;
+    font-size: 9pt;
+    line-height: 1.7;
+    color: var(--stone);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .ref-block strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .cover-main {
+    align-self: center;
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13pt;
+    color: var(--burnt);
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--burnt);
+  }
+
+  .cover h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 52pt;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .cover h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--burnt);
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+  }
+
+  .cover-subtitle {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 18pt;
+    line-height: 1.3;
+    color: var(--ink-soft);
+    margin-top: 28px;
+    max-width: 480px;
+    font-variation-settings: "opsz" 60;
+  }
+
+  .cover-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .meta-block {
+    font-size: 9pt;
+    line-height: 1.7;
+  }
+  .meta-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 7.5pt;
+    color: var(--stone);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .meta-value {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    line-height: 1.35;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .meta-sub {
+    font-size: 9.5pt;
+    color: var(--stone);
+    margin-top: 4px;
+  }
+
+  h2.section-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 26pt;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 28px 0;
+    font-variation-settings: "opsz" 80, "SOFT" 40;
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--burnt);
+    font-variation-settings: "opsz" 80, "SOFT" 100;
+  }
+
+  h3.subsection-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 14pt;
+    color: var(--ink);
+    margin: 28px 0 12px 0;
+    letter-spacing: -0.005em;
+  }
+
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 20px 0 10px 0;
+  }
+
+  p {
+    margin-bottom: 14px;
+    hyphens: auto;
+  }
+
+  p.lead {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 14pt;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 60;
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  .phase-header {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    margin: 0 0 12px 0;
+    padding-top: 8px;
+  }
+  .phase-number {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 56pt;
+    line-height: 1;
+    color: var(--burnt);
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.04em;
+  }
+  .phase-label {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 8pt;
+    color: var(--stone);
+    margin-bottom: 6px;
+  }
+  .phase-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 24pt;
+    line-height: 1.1;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    font-variation-settings: "opsz" 80, "SOFT" 50;
+  }
+  .phase-title em {
+    font-style: italic;
+    color: var(--burnt);
+  }
+
+  .phase-objective {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--ink-soft);
+    margin: 20px 0 18px 112px;
+    padding-left: 16px;
+    border-left: 2px solid var(--burnt);
+    line-height: 1.5;
+  }
+
+  .phase-body {
+    margin-left: 112px;
+  }
+
+  ul.detail-list {
+    list-style: none;
+    margin: 12px 0 18px 0;
+  }
+  ul.detail-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+  ul.detail-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--burnt);
+    font-weight: 500;
+  }
+
+  ul.detail-list ul {
+    list-style: none;
+    margin: 6px 0 6px 8px;
+  }
+  ul.detail-list ul li {
+    padding-left: 18px;
+    margin-bottom: 4px;
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+  }
+  ul.detail-list ul li::before {
+    content: "·";
+    color: var(--stone);
+  }
+
+  .phase-footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    margin: 24px 0 0 112px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .deliverables {
+    font-size: 9.5pt;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+  .deliverables-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 7.5pt;
+    color: var(--burnt);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .price-tag {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 28pt;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 96;
+    white-space: nowrap;
+  }
+  .price-tag-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 7.5pt;
+    color: var(--stone);
+    margin-bottom: 4px;
+    text-align: right;
+  }
+
+  .included-block {
+    background: var(--paper-shade);
+    border-left: 3px solid var(--burnt);
+    padding: 22px 28px;
+    margin: 20px 0 24px 112px;
+  }
+  .included-label {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 7.5pt;
+    color: var(--burnt);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .included-block ul {
+    list-style: none;
+  }
+  .included-block ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 4px;
+    font-size: 10pt;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .included-block ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--burnt);
+    font-weight: 500;
+  }
+
+  .option-block {
+    background: var(--paper-shade);
+    border-left: 3px solid var(--burnt);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .option-label {
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--burnt);
+    letter-spacing: 0.04em;
+  }
+  .option-block h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 18pt;
+    color: var(--ink);
+    margin-bottom: 12px;
+    margin-top: 6px;
+    font-variation-settings: "opsz" 80;
+  }
+  .option-block .price-line {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .option-block .price-line span:first-child {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 8pt;
+    color: var(--stone);
+  }
+  .option-block .price-line span:last-child {
+    font-family: var(--font-display);
+    font-size: 18pt;
+    color: var(--ink);
+    font-variation-settings: "opsz" 60;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 10.5pt;
+  }
+  .pricing-table th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--burnt);
+    padding: 14px 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .pricing-table th:last-child { text-align: right; }
+  .pricing-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  .pricing-table td:first-child {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--burnt);
+    width: 40px;
+    font-weight: 500;
+  }
+  .pricing-table td:nth-child(2) strong {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 11pt;
+    display: block;
+    margin-bottom: 2px;
+    color: var(--ink);
+  }
+  .pricing-table td:nth-child(2) span {
+    font-size: 9.5pt;
+    color: var(--stone);
+  }
+  .pricing-table td:last-child {
+    text-align: right;
+    font-family: var(--font-display);
+    font-size: 13pt;
+    color: var(--ink);
+    white-space: nowrap;
+    font-variation-settings: "opsz" 60;
+  }
+  .pricing-table tr.subtotal td {
+    border-top: 1.5px solid var(--ink);
+    border-bottom: none;
+    padding-top: 18px;
+    background: transparent;
+  }
+  .pricing-table tr.subtotal td:nth-child(2) strong {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 9.5pt;
+  }
+  .pricing-table tr.subtotal td:last-child {
+    font-size: 16pt;
+    font-weight: 500;
+  }
+  .pricing-table tr.option-row td:first-child {
+    color: var(--stone);
+  }
+  .pricing-table tr.option-row td:nth-child(2) strong {
+    color: var(--ink-soft);
+  }
+
+  .total-callout {
+    margin-top: 32px;
+    padding: 32px 36px;
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .total-callout::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--burnt);
+  }
+  .total-callout-label {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--paper-shade);
+    margin-bottom: 4px;
+    font-variation-settings: "opsz" 60;
+  }
+  .total-callout-text {
+    font-family: var(--font-display);
+    font-size: 14pt;
+    color: var(--paper);
+    line-height: 1.3;
+    font-variation-settings: "opsz" 60;
+  }
+  .total-callout-amount {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 42pt;
+    line-height: 1;
+    color: var(--paper);
+    letter-spacing: -0.02em;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  .total-callout-note {
+    grid-column: 1 / -1;
+    font-size: 9pt;
+    color: var(--paper-shade);
+    margin-top: 8px;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .timeline {
+    margin: 24px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .timeline-period {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11pt;
+    color: var(--burnt);
+  }
+  .timeline-phase {
+    font-size: 11pt;
+    color: var(--ink);
+  }
+  .timeline-callout {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--highlight);
+    border-left: 3px solid var(--burnt);
+    font-family: var(--font-display);
+    font-size: 12pt;
+    color: var(--ink);
+    font-style: italic;
+    font-variation-settings: "opsz" 60;
+  }
+  .timeline-callout strong {
+    font-style: normal;
+    color: var(--burnt);
+  }
+
+  /* ========== GANTT CHART ========== */
+  .gantt {
+    margin: 32px 0 24px 0;
+  }
+  .gantt-axis {
+    display: grid;
+    grid-template-columns: 180px repeat(14, 1fr);
+    gap: 0;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-size: 8pt;
+    color: var(--stone);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .gantt-axis-label {
+    font-size: 7.5pt;
+    color: var(--burnt);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .gantt-axis-tick {
+    text-align: center;
+    font-variation-settings: "opsz" 60;
+    color: var(--stone);
+    opacity: 0;
+  }
+  .gantt-axis-tick.major {
+    opacity: 1;
+    border-left: 1px solid var(--rule);
+    padding-left: 2px;
+  }
+  .gantt-row {
+    display: grid;
+    grid-template-columns: 180px repeat(14, 1fr);
+    align-items: center;
+    gap: 0;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .gantt-label {
+    padding-right: 16px;
+    font-size: 10pt;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .gantt-label .gantt-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 9pt;
+    color: var(--burnt);
+    margin-right: 8px;
+    letter-spacing: 0.04em;
+  }
+  .gantt-bar {
+    height: 14px;
+    background: var(--burnt);
+    border-radius: 1px;
+    position: relative;
+  }
+  .gantt-bar.soft {
+    background: var(--burnt-soft);
+    opacity: 0.85;
+  }
+  .gantt-bar.dark {
+    background: var(--ink);
+  }
+  .gantt-milestone {
+    width: 12px;
+    height: 12px;
+    background: var(--ink);
+    transform: rotate(45deg);
+    margin: 0 auto;
+  }
+  .gantt-legend {
+    display: flex;
+    gap: 28px;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    font-size: 9pt;
+    color: var(--stone);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .gantt-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .gantt-legend-swatch {
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    background: var(--burnt);
+  }
+  .gantt-legend-swatch.soft {
+    background: var(--burnt-soft);
+    opacity: 0.85;
+  }
+  .gantt-legend-swatch.milestone {
+    width: 10px;
+    height: 10px;
+    background: var(--ink);
+    transform: rotate(45deg);
+  }
+
+  .modalites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 48px;
+    margin: 24px 0;
+  }
+  .modalite {
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+  }
+  .modalite-label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 8pt;
+    color: var(--burnt);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .modalite-text {
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+
+  .reasons {
+    counter-reset: reason;
+    margin: 24px 0;
+  }
+  .reason {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .reason:last-child { border-bottom: none; }
+  .reason-number {
+    counter-increment: reason;
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 32pt;
+    line-height: 1;
+    color: var(--burnt);
+    font-variation-settings: "opsz" 96;
+  }
+  .reason-number::before {
+    content: counter(reason, decimal-leading-zero);
+  }
+  .reason h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 60;
+  }
+  .reason p {
+    margin: 0;
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .signature-block {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 2px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: flex-end;
+  }
+  .signature-mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22pt;
+    color: var(--burnt);
+    font-variation-settings: "opsz" 96, "SOFT" 100;
+    margin-bottom: 6px;
+  }
+  .signature-name {
+    font-family: var(--font-display);
+    font-size: 13pt;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .signature-role {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 10.5pt;
+    color: var(--burnt);
+    margin-bottom: 14px;
+    font-variation-settings: "opsz" 60;
+  }
+  .signature-contact {
+    font-size: 9.5pt;
+    color: var(--stone);
+    line-height: 1.65;
+  }
+  .signature-contact .contact-group {
+    margin-bottom: 8px;
+  }
+  .signature-contact .contact-group:last-child {
+    margin-bottom: 0;
+  }
+  .signature-contact a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--teal-soft);
+  }
+  .signature-admin {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-size: 8pt;
+    color: var(--stone);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .signature-closing {
+    text-align: right;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    font-variation-settings: "opsz" 60;
+  }
+
+  .page-footer {
+    margin-top: 56px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: var(--stone);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-marker {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-marker-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--burnt);
+    letter-spacing: 0.04em;
+  }
+  .section-marker-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .section-marker-label {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 8pt;
+    color: var(--stone);
+  }
+
+  @page {
+    size: 210mm 297mm;
+    margin: 0;
+  }
+  @media print {
+    html, body { background: var(--paper); margin: 0; padding: 0; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      break-after: page;
+      break-inside: avoid;
+      min-height: 0;
+      height: 295mm;
+      max-height: 295mm;
+      overflow: hidden;
+      background-image: none;
+      padding: 60px 96px;
+    }
+    .page.cover { min-height: 0; }
+    .page::before { display: none; }
+    .page:last-child { break-after: auto; }
+  }
+
+  @media (max-width: 800px) {
+    :root {
+      --page-padding-y: 36px;
+      --page-padding-x: 28px;
+    }
+    .page { margin: 8px; }
+    .cover h1 { font-size: 36pt; }
+    .phase-header { grid-template-columns: 56px 1fr; gap: 16px; }
+    .phase-number { font-size: 40pt; }
+    .phase-title { font-size: 18pt; }
+    .phase-objective, .phase-body, .phase-footer, .included-block { margin-left: 0; }
+    .cover-bottom { grid-template-columns: 1fr; }
+    .modalites { grid-template-columns: 1fr; }
+    .signature-block { grid-template-columns: 1fr; }
+    .total-callout { grid-template-columns: 1fr; }
+    .total-callout-amount { font-size: 32pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1 — COVER ========== -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="monogram"><span class="monogram-mark"></span>Laurent Curau</div>
+    <div class="ref-block">
+      <div><strong>OAM-2026-05-19-B</strong></div>
+      <div>19 mai 2026</div>
+      <div>Validité 30 jours</div>
+    </div>
+  </div>
+
+  <div class="cover-main">
+    <div class="eyebrow">Proposition de prestation</div>
+    <h1>Identité visuelle<br>&amp; <em>site internet</em></h1>
+    <p class="cover-subtitle">Ordre des Architectes de Monaco</p>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="meta-block">
+      <div class="meta-label">Préparé pour</div>
+      <div class="meta-value">Ordre des Architectes</div>
+      <div class="meta-sub">Principauté de Monaco</div>
+    </div>
+    <div class="meta-block">
+      <div class="meta-label">Préparé par</div>
+      <div class="meta-value">Laurent Curau</div>
+      <div class="meta-sub">Conseil indépendant en ingénierie numérique · Monaco</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PAGE 2 — PRÉAMBULE ========== -->
+<section class="page">
+  <div class="section-marker">
+    <span class="section-marker-num">i.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Préambule</span>
+  </div>
+
+  <h2 class="section-title">Une refonte visuelle<br>livrée <em>opérationnelle</em>.</h2>
+
+  <p class="lead">La présente proposition porte sur la refonte de l'identité visuelle de l'Ordre des Architectes de Monaco et la conception d'un site internet vitrine institutionnel. Elle est dimensionnée pour livrer un ensemble cohérent, prêt à l'emploi, sans dépendance à des prestataires complémentaires pour la mise en ligne ou la prise en main.</p>
+
+  <h3 class="subsection-title">Le principe</h3>
+  <p>Un site internet institutionnel n'a de valeur que <strong>publié, sécurisé, accessible et administrable</strong>. La proposition intègre donc, dans un prix unique, l'ensemble des prestations nécessaires à sa mise en service : conception, développement, hébergement, déploiement, formation et garantie.</p>
+
+  <h3 class="subsection-title">Ce qui fonde cette proposition</h3>
+  <p>Plus de <strong>dix ans d'expérience</strong> en conception et développement d'applications web professionnelles. Une <strong>pratique du numérique public</strong> acquise auprès du Ministry of Justice, du Government Digital Service et du Department for Education au Royaume-Uni, institutions reconnues pour leurs standards d'accessibilité et de service à l'usager. Une <strong>connaissance fine du cadre monégasque</strong> : Loi n° 1.565 du 3 décembre 2024 relative à la protection des données personnelles, environnement institutionnel local. Une <strong>approche full-stack intégrée</strong> (design, développement, hébergement, déploiement, maintenance) : un seul interlocuteur, une seule chaîne de responsabilité.</p>
+
+  <div class="timeline-callout" style="margin-top: 32px;">
+    <strong>Engagement principal :</strong> vous livrer une identité visuelle systématisée et un site internet en production, conforme aux exigences d'une institution monégasque. Hébergement, mise en ligne, sécurité, formation et garantie inclus dans le forfait.
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 02</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 3 — PHASE 1 IDENTITÉ ========== -->
+<section class="page">
+  <div class="section-marker">
+    <span class="section-marker-num">ii.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Méthode &amp; phases</span>
+  </div>
+
+  <div class="phase-header">
+    <div class="phase-number">01</div>
+    <div>
+      <div class="phase-label">Phase un</div>
+      <div class="phase-title">Identité visuelle &amp; <em>charte numérique</em></div>
+    </div>
+  </div>
+  <div class="phase-objective">Moderniser et systématiser l'identité visuelle institutionnelle dans une charte de référence, déclinée pour les supports numériques et imprimés.</div>
+
+  <div class="phase-body">
+    <h4>Direction artistique</h4>
+    <ul class="detail-list">
+      <li>Modernisation de l'identité visuelle institutionnelle existante, dans une logique de continuité</li>
+      <li>Définition d'une direction artistique cohérente avec le caractère institutionnel de l'Ordre</li>
+      <li>Création d'un univers graphique sobre, contemporain et durable</li>
+    </ul>
+
+    <h4>Éléments graphiques systématisés</h4>
+    <ul class="detail-list">
+      <li><strong>Palette colorimétrique</strong> conforme aux contrastes RGAA / WCAG 2.1 niveau AA — utilisable en web sans débat</li>
+      <li><strong>Typographies</strong> sélectionnées et licenciées pour usage web et impression</li>
+      <li>Règles de mise en page — grilles, marges, hiérarchies</li>
+      <li>Iconographie cohérente · principes photographiques · règles de composition</li>
+      <li>Principes d'utilisation sur site internet et supports digitaux</li>
+    </ul>
+
+    <h4>Livrables</h4>
+    <ul class="detail-list">
+      <li><strong>Charte graphique de référence</strong> (PDF) — document synthétique exploitable par toute équipe interne ou prestataire futur</li>
+      <li><strong>Fichiers graphiques exploitables</strong> — SVG, PDF, PNG, formats sources libres de licences propriétaires</li>
+      <li><strong>Design system numérique livré en code HTML / CSS</strong> — directement réutilisable sur le site et sur tout futur support web, sans retraduction depuis un fichier Figma</li>
+    </ul>
+  </div>
+
+  <div class="phase-footer">
+    <div class="deliverables">
+      <div class="deliverables-label">Livrables</div>
+      Charte graphique PDF · fichiers sources · design system numérique en code
+    </div>
+    <div>
+      <div class="price-tag-label">Forfait</div>
+      <div class="price-tag">6 800 €</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 03</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 4 — PHASE 2 SITE ========== -->
+<section class="page">
+  <div class="phase-header">
+    <div class="phase-number">02</div>
+    <div>
+      <div class="phase-label">Phase deux</div>
+      <div class="phase-title">Conception &amp; réalisation du <em>site internet</em></div>
+    </div>
+  </div>
+  <div class="phase-objective">Concevoir et développer un site internet vitrine institutionnel, responsive, performant, accessible, prêt à entrer en production.</div>
+
+  <div class="phase-body">
+    <h4>Conception</h4>
+    <ul class="detail-list">
+      <li>Conception UX / UI des différentes pages, en cohérence avec la nouvelle identité</li>
+      <li>Architecture de l'information — arborescence, parcours, navigation</li>
+      <li><strong>Prototype HTML / CSS navigable</strong> sur tous appareils, testé en conditions réelles, sur votre propre téléphone et dans de vrais navigateurs</li>
+      <li>Présentation et itération avec le Bureau de l'Ordre — deux rounds de retours inclus</li>
+    </ul>
+
+    <h4>Développement</h4>
+    <ul class="detail-list">
+      <li>Développement du site vitrine — 8 à 10 pages institutionnelles (présentation, missions, composition de l'Ordre, déontologie, actualités, contact)</li>
+      <li><strong>Version responsive native</strong> — ordinateur, tablette, mobile, navigation clavier</li>
+      <li>Framework éprouvé en environnement institutionnel (GitHub, Shopify, Government Digital Service)</li>
+      <li>Intégration des contenus fournis par l'Ordre — jusqu'à 10 pages mises en forme</li>
+    </ul>
+
+    <h4>Interface d'administration</h4>
+    <ul class="detail-list">
+      <li><strong>Espace d'administration sur mesure</strong>, en français, accessible depuis n'importe quel navigateur — pas un WordPress générique</li>
+      <li><strong>Gestion du tableau des membres</strong> de l'Ordre — ajout, modification et retrait d'un membre, avec ses informations (nom, fonction, photo)</li>
+      <li><strong>Publication des actualités et communiqués</strong> — création, édition, publication, archivage, sans intervention technique</li>
+      <li>Modification des contenus des pages institutionnelles existantes — texte, images, liens</li>
+      <li>Système de rôles simple — administrateur, rédacteur</li>
+      <li>Historique des modifications et restauration · gestion des médias</li>
+    </ul>
+
+    <h4>Bilingue automatisé</h4>
+    <ul class="detail-list">
+      <li><strong>Site bilingue français / anglais</strong> dès la mise en ligne — essentiel pour la clientèle internationale de la Principauté</li>
+      <li><strong>Traduction automatique des contenus</strong> par modèle de langue : à la publication d'une page, d'une actualité ou d'une fiche membre en français, la version anglaise est générée sans intervention</li>
+      <li>Édition manuelle de la version traduite possible à tout moment depuis l'interface d'administration — la machine propose, l'institution garde la main</li>
+      <li>Architecture prête pour l'ajout ultérieur d'autres langues (italien notamment)</li>
+      <li>Couverture des coûts de traduction automatique dans le cadre d'une utilisation raisonnable, incluse dans la maintenance annuelle (Option C)</li>
+    </ul>
+
+    <h4>Qualité non-négociable</h4>
+    <ul class="detail-list">
+      <li><strong>Score Lighthouse 90+</strong> sur les quatre axes — Performance, Accessibilité, Bonnes pratiques, SEO</li>
+      <li><strong>Conformité RGAA / WCAG 2.1 niveau AA</strong> — obligation morale pour une institution publique, et obligation réglementaire en Europe depuis juin 2025 (European Accessibility Act)</li>
+      <li><strong>Conformité Loi n° 1.565</strong> — mentions légales, politique de confidentialité, gestion des cookies, registre des traitements</li>
+      <li>HTTPS systématique, en-têtes de sécurité durcis, protection contre les attaques OWASP Top 10</li>
+      <li>SEO technique — sitemap, robots.txt, balisage Schema.org (Organization), métadonnées Open Graph</li>
+    </ul>
+  </div>
+
+  <div class="phase-footer">
+    <div class="deliverables">
+      <div class="deliverables-label">Livrables</div>
+      Prototype navigable · site développé bilingue FR / EN · interface d'administration (tableau des membres + actualités) · traduction automatisée des contenus · code source documenté · pages légales conformes
+    </div>
+    <div>
+      <div class="price-tag-label">Forfait</div>
+      <div class="price-tag">11 500 €</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 04</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 5 — PHASE 3 MISE EN PRODUCTION + PHASE 4 ========== -->
+<section class="page">
+  <div class="phase-header">
+    <div class="phase-number">03</div>
+    <div>
+      <div class="phase-label">Phase trois</div>
+      <div class="phase-title">Mise en production &amp; <em>hébergement</em></div>
+    </div>
+  </div>
+  <div class="phase-objective">Mettre le site en ligne dans les meilleures conditions, sécurisé, monitoré, sans rupture pour les utilisateurs.</div>
+
+  <div class="phase-body">
+    <ul class="detail-list">
+      <li><strong>Configuration de l'hébergement</strong> sur infrastructure européenne — souveraineté des données, conformité Loi n° 1.565</li>
+      <li><strong>Configuration du nom de domaine</strong> et certificat SSL (Let's Encrypt ou équivalent)</li>
+      <li>Configuration des emails techniques — contact, no-reply</li>
+      <li><strong>Mise en ligne finale</strong> et bascule DNS</li>
+      <li>Sauvegardes automatiques quotidiennes — chiffrées, conservées 30 jours</li>
+      <li>Monitoring — uptime, performance, alertes</li>
+      <li>Tests de recette (validation par vos soins du site complet) avec votre équipe</li>
+    </ul>
+  </div>
+
+  <div class="phase-footer">
+    <div class="deliverables">
+      <div class="deliverables-label">Livrables · première année d'hébergement incluse</div>
+      Site en production · plan de continuité · accès et identifiants
+    </div>
+    <div>
+      <div class="price-tag-label">Forfait</div>
+      <div class="price-tag">1 800 €</div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase-header" style="margin-top: 56px;">
+    <div class="phase-number">04</div>
+    <div>
+      <div class="phase-label">Phase quatre</div>
+      <div class="phase-title">Formation, garantie &amp; <em>propriété</em></div>
+    </div>
+  </div>
+  <div class="phase-objective">Vous rendre pleinement autonome dans l'utilisation et la mise à jour du site, et vous transférer la propriété intégrale du livrable.</div>
+
+  <div class="phase-body">
+    <ul class="detail-list">
+      <li>Session de formation aux fonctions d'édition — 2 heures, en présentiel à Monaco ou en visio</li>
+      <li><strong>Guide utilisateur illustré</strong> en français (PDF) couvrant toutes les fonctions</li>
+      <li>Procédures pas-à-pas pour les tâches récurrentes — publier une actualité, ajouter ou retirer un membre du tableau, modifier une page</li>
+      <li><strong>Garantie post-livraison de 3 mois</strong> — correction gratuite de toute anomalie, support email pour vos questions</li>
+      <li><strong>Transfert de propriété intégrale</strong> — code source, designs, contenus, charte graphique, fichiers sources. Vous restez pleinement propriétaire et pouvez confier l'ensemble à n'importe quel prestataire futur. Aucun verrouillage dans un éditeur propriétaire.</li>
+    </ul>
+  </div>
+
+  <div class="phase-footer">
+    <div class="deliverables">
+      <div class="deliverables-label">Livrables</div>
+      Formation · guide utilisateur · garantie 3 mois · transfert de propriété
+    </div>
+    <div>
+      <div class="price-tag-label">Forfait</div>
+      <div class="price-tag">900 €</div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 05</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 6 — OPTIONS ========== -->
+<section class="page">
+  <div class="section-marker">
+    <span class="section-marker-num">iii.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Options</span>
+  </div>
+
+  <p class="lead">Prestations complémentaires, non incluses dans le sous-total projet. Chiffrées séparément pour vous laisser l'arbitrage.</p>
+
+  <div class="option-block">
+    <span class="option-label">Option A</span>
+    <h3>Shooting photo institutionnel</h3>
+    <p>Refonte visuelle complète des portraits des 25 membres de l'institution et de la documentation photographique du site.</p>
+    <ul class="detail-list">
+      <li><strong>Photographe professionnel partenaire</strong>, sélectionné pour son expérience institutionnelle</li>
+      <li><strong>Journée complète sur site</strong> — vingt-cinq portraits institutionnels exigent une journée pleine pour obtenir une qualité homogène entre le premier et le dernier membre photographié</li>
+      <li>Portraits individuels en studio mobile installé sur place</li>
+      <li>Photos d'ambiance institutionnelles — salle de réunion, vues, scènes de travail</li>
+      <li>Direction artistique alignée avec l'identité visuelle livrée en phase 1 — cadrage, fond, lumière, traitement</li>
+      <li>Retouches haut de gamme et harmonisation lumière / colorimétrie sur l'ensemble</li>
+      <li>Livraison sous 7 jours ouvrés — fichiers HD impression, versions web optimisées, variantes carrées pour réseaux sociaux</li>
+    </ul>
+    <div class="price-line">
+      <span>Forfait</span>
+      <span>3 000 €</span>
+    </div>
+  </div>
+
+  <div class="option-block">
+    <span class="option-label">Option B</span>
+    <h3>Refonte du logo institutionnel</h3>
+    <p>Recherche créative et direction artistique sur le logo, avec proposition de plusieurs pistes graphiques et déclinaisons.</p>
+    <ul class="detail-list">
+      <li>Recherche créative et direction artistique</li>
+      <li>Proposition de plusieurs pistes graphiques argumentées</li>
+      <li>Modernisation ou redesign complet du logo</li>
+      <li>Ajustements, itérations et déclinaisons (couleur, monochrome, blanc inversé, version compacte)</li>
+      <li>Livraison des fichiers HD et vectoriels — SVG, PDF, PNG, JPEG</li>
+    </ul>
+    <div class="price-line">
+      <span>Forfait</span>
+      <span>500 €</span>
+    </div>
+  </div>
+
+  <div class="option-block">
+    <span class="option-label">Option C</span>
+    <h3>Maintenance &amp; infogérance annuelle</h3>
+    <p>À partir du 4<sup>e</sup> mois après la mise en ligne, la garantie de 3 mois étant incluse en phase 4.</p>
+    <ul class="detail-list">
+      <li>Mises à jour de sécurité mensuelles — dépendances, framework, OS</li>
+      <li>Sauvegardes vérifiées tous les trimestres — test de restauration</li>
+      <li>Monitoring proactif 24/7 — uptime, performance, sécurité</li>
+      <li>Support technique — 2 heures / mois, cumulables sur 3 mois glissants</li>
+      <li><strong>Couverture des coûts du modèle de langue (LLM)</strong> pour la traduction automatique des contenus publiés depuis l'interface d'administration, dans le cadre d'une utilisation raisonnable</li>
+      <li>Bilan annuel d'usage et plan d'évolution</li>
+    </ul>
+    <div class="price-line">
+      <span>Forfait annuel</span>
+      <span>1 800 € / an</span>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 06</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 7 — PRICING + PLANNING ========== -->
+<section class="page">
+  <div class="section-marker">
+    <span class="section-marker-num">iv.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Récapitulatif financier</span>
+  </div>
+
+  <h2 class="section-title">Investissement</h2>
+
+  <table class="pricing-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Phase</th>
+        <th>Tarif</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td><strong>Identité visuelle &amp; charte numérique</strong><span>Direction artistique, charte de référence, design system en code, fichiers sources</span></td>
+        <td>6 800 €</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><strong>Conception &amp; réalisation du site internet</strong><span>Prototype navigable, développement, 8 à 10 pages, responsive, bilingue FR / EN avec traduction automatisée, interface d'administration (tableau des membres + actualités), conformité, SEO</span></td>
+        <td>11 500 €</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><strong>Mise en production &amp; hébergement</strong><span>Configuration serveur, nom de domaine, SSL, mise en ligne · 1<sup>re</sup> année d'hébergement incluse</span></td>
+        <td>1 800 €</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><strong>Formation, garantie &amp; propriété</strong><span>Session, guide, garantie 3 mois, transfert de propriété intégrale</span></td>
+        <td>900 €</td>
+      </tr>
+      <tr class="subtotal">
+        <td></td>
+        <td><strong>Sous-total projet</strong></td>
+        <td>21 000 €</td>
+      </tr>
+      <tr class="option-row">
+        <td>A</td>
+        <td><strong>Shooting photo institutionnel</strong><span>Optionnel — journée complète, 25 portraits + ambiances</span></td>
+        <td>3 000 €</td>
+      </tr>
+      <tr class="option-row">
+        <td>B</td>
+        <td><strong>Refonte du logo institutionnel</strong><span>Optionnel — recherche créative, pistes, déclinaisons, fichiers HD/vectoriels</span></td>
+        <td>500 €</td>
+      </tr>
+      <tr class="option-row">
+        <td>C</td>
+        <td><strong>Maintenance &amp; infogérance</strong><span>Optionnel — à partir du 4<sup>e</sup> mois après mise en ligne</span></td>
+        <td>1 800 € / an</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="total-callout">
+    <div>
+      <div class="total-callout-label">Investissement total recommandé</div>
+      <div class="total-callout-text">Projet complet avec shooting photo institutionnel et refonte du logo</div>
+    </div>
+    <div class="total-callout-amount">24 500 € HT</div>
+    <div class="total-callout-note">Tarifs exprimés hors taxes. TVA applicable selon le régime en vigueur en Principauté de Monaco.</div>
+  </div>
+
+  <!-- PLANNING -->
+  <div class="section-marker" style="margin-top: 56px;">
+    <span class="section-marker-num">v.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Planning indicatif</span>
+  </div>
+
+  <div class="gantt">
+    <div class="gantt-axis">
+      <div class="gantt-axis-label">Semaines</div>
+      <div class="gantt-axis-tick major">1</div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick major">5</div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick major">10</div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick"></div>
+      <div class="gantt-axis-tick major">14</div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label"><span class="gantt-num">01</span>Identité visuelle &amp; charte</div>
+      <div class="gantt-bar soft" style="grid-column: 2 / 6;"></div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label"><span class="gantt-num">02</span>Site &amp; interface d'administration</div>
+      <div class="gantt-bar" style="grid-column: 6 / 15;"></div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label"><span class="gantt-num">03</span>Mise en production</div>
+      <div class="gantt-bar soft" style="grid-column: 15 / 16;"></div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label"><span class="gantt-num">04</span>Formation &amp; garantie</div>
+      <div class="gantt-bar soft" style="grid-column: 15 / 16;"></div>
+    </div>
+
+    <div class="gantt-row">
+      <div class="gantt-label"><span class="gantt-num" style="color: var(--ink);">★</span>Mise en ligne</div>
+      <div class="gantt-milestone" style="grid-column: 15 / 16;"></div>
+    </div>
+
+    <div class="gantt-legend">
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch"></span> Phase principale</div>
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch soft"></span> Phase de transition</div>
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch milestone"></span> Jalon — mise en ligne</div>
+    </div>
+  </div>
+
+  <div class="timeline-callout">
+    <strong>Mise en ligne cible :</strong> sous 14 semaines à compter de la signature, validation de l'offre sous deux semaines. Calendrier dimensionné pour absorber les délais de validation institutionnels et garantir un livrable irréprochable.
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 07</span>
+  </div>
+</section>
+
+<!-- ========== PAGE 8 — MODALITÉS + POURQUOI + SIGNATURE ========== -->
+<section class="page">
+  <div class="section-marker">
+    <span class="section-marker-num">vi.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Modalités</span>
+  </div>
+
+  <div class="modalites">
+    <div class="modalite">
+      <div class="modalite-label">Paiement</div>
+      <div class="modalite-text">30 % à la signature · 30 % à la validation de l'identité visuelle · 30 % à la mise en production · 10 % en fin de période de garantie</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Validité de l'offre</div>
+      <div class="modalite-text">30 jours à compter de la date d'émission</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Garantie</div>
+      <div class="modalite-text">Correction gratuite de toute anomalie pendant 3 mois après la mise en ligne</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Propriété intellectuelle</div>
+      <div class="modalite-text">Vous êtes pleinement propriétaire du code source, des designs, de la charte, des contenus et de l'ensemble des fichiers produits. Transfert intégral à la livraison.</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Stabilité des tarifs</div>
+      <div class="modalite-text">Forfaits fermes pour le périmètre décrit. Aucune révision tarifaire en cours de projet. Évolutions hors périmètre par avenant chiffré préalable — taux journalier de référence : 900 €.</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Confidentialité</div>
+      <div class="modalite-text">Accord de non-divulgation signé en début de mission</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Sous-traitance</div>
+      <div class="modalite-text">Prestation exécutée intégralement par mes soins, à la seule exception du shooting photo (Option A), réalisé par un photographe partenaire (nom communiqué sur demande).</div>
+    </div>
+    <div class="modalite">
+      <div class="modalite-label">Entretien préalable</div>
+      <div class="modalite-text">Une demi-journée avant toute signature, sans frais ni obligation, pour confronter cette proposition à vos besoins réels.</div>
+    </div>
+  </div>
+
+  <!-- POURQUOI -->
+  <div class="section-marker" style="margin-top: 56px;">
+    <span class="section-marker-num">vii.</span>
+    <span class="section-marker-rule"></span>
+    <span class="section-marker-label">Pourquoi cette proposition</span>
+  </div>
+
+  <div class="reasons">
+    <div class="reason">
+      <div class="reason-number"></div>
+      <div>
+        <h3>Un ancrage monégasque</h3>
+        <p>De nationalité monégasque, résident en Principauté, familier de la Loi n° 1.565 et de l'environnement institutionnel local.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-number"></div>
+      <div>
+        <h3>Une expertise institutionnelle rare en Principauté</h3>
+        <p>Plus de 10 ans de pratique, dont une expérience auprès du Ministry of Justice, du Government Digital Service et du Department for Education au Royaume-Uni, institutions reconnues mondialement pour leurs standards de service public numérique.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-number"></div>
+      <div>
+        <h3>Un site livré opérationnel</h3>
+        <p>Hébergement, nom de domaine, mise en ligne, sécurité, formation, garantie : tout est inclus dans le forfait projet.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-number"></div>
+      <div>
+        <h3>Un seul interlocuteur, une seule chaîne de responsabilité</h3>
+        <p>Design, développement, hébergement, déploiement : la même personne du premier jour à la mise en ligne. Pas de renvoi de balle entre prestataires.</p>
+      </div>
+    </div>
+    <div class="reason">
+      <div class="reason-number"></div>
+      <div>
+        <h3>Conformité institutionnelle de série</h3>
+        <p>Accessibilité RGAA / WCAG 2.1 AA, conformité Loi n° 1.565, sécurité OWASP : intégrées dès la conception, non en correctif après coup.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="signature-block">
+    <div>
+      <div class="signature-mark">Laurent</div>
+      <div class="signature-name">Laurent Curau</div>
+      <div class="signature-role">Conseil indépendant en ingénierie numérique</div>
+      <div class="signature-contact">
+        <div class="contact-group">
+          <a href="mailto:bonjour@laurentcurau.com">bonjour@laurentcurau.com</a><br>
+          <a href="https://laurentcurau.com">laurentcurau.com</a><br>
+          +33 6 75 29 88 71
+        </div>
+        <div class="contact-group">
+          2, boulevard de Belgique, 98000 Monaco
+        </div>
+        <div class="signature-admin">N° PR 01061</div>
+      </div>
+    </div>
+    <div class="signature-closing">
+      Je reste à votre<br>entière disposition.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Ordre des Architectes de Monaco</span>
+    <span>OAM-2026-05-19-B · 08</span>
+  </div>
+</section>
+
+</body>
+</html>
